@@ -1,0 +1,10 @@
+@mixin flex($j,$a) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+@mixin pos-a($top,$lef) {
+  position:absolute;
+  top: $top;
+  left: $lef;
+}
