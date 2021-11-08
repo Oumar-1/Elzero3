@@ -3,8 +3,10 @@
   justify-content: $j;
   align-items: $a;
 }
-@mixin pos-a($top,$lef) {
-  position:absolute;
+@mixin pos-abs($top,$rit,$botm,$lef) {
+  position: absolute;
   top: $top;
+  right: $rit;
+  bottom: $botm;
   left: $lef;
 }

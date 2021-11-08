@@ -14,7 +14,7 @@
 /* Start nav  */
 nav {
   @media (max-width: 767px) {
-    .container{
+    .container {
       flex-direction: column;
     }
     .links > li > a {
@@ -25,9 +25,6 @@ nav {
     .logo {
       height: 60px;
     }
-    ul.main{
-      top: 106px;
-    }
     .links-ul .box {
       width: 100%;
       li {
@@ -36,7 +33,7 @@ nav {
     }
   }
   @media (max-width: 991px) {
-    .img-li {
+    .imag {
       display: none;
     }
   }
@@ -44,23 +41,23 @@ nav {
 /* End nav queries */
 
 /* Start landing queries */
-.landing{
-  @media (max-width:767px) {
-    .text{
+.landing {
+  @media (max-width: 767px) {
+    .text {
       font-size: 14px;
     }
   }
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     min-height: calc(100vh - 105px);
-    .container{
+    .container {
       grid-template-columns: 1fr;
     }
-    .text{
+    .text {
       justify-content: center;
       text-align: center;
     }
-    .imag{
-      display: none
+    .imag {
+      display: none;
     }
   }
 }

@@ -1,6 +1,22 @@
+@-webkit-keyframes up-down {
+  to{
+    transform:translateY(-40px);
+  }
+}
 @keyframes up-down {
   to{
     transform:translateY(-40px);
+  }
+}
+@-webkit-keyframes scrool-animation {
+  25%{
+    transform: translate(-50%,0px);
+  }
+  35%,55%,80%{
+    transform: translate(-50%,15px);
+  }
+  45%,65%,90%{
+    transform: translate(-50%,0);
   }
 }
 @keyframes scrool-animation {
@@ -12,5 +28,10 @@
   }
   45%,65%,90%{
     transform: translate(-50%,0);
+  }
+}
+@keyframes for-back {
+  to{
+    transform: translate(-15px,-50%);
   }
 }
