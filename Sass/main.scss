@@ -403,9 +403,17 @@ nav {
         color: var(--box-color);
         transition-delay: 150ms;
         position: relative;
+        z-index: 3;
         &::before {
           content: "";
-          @extend %fill-animat;
+          transition-duration: var(--main-transition);
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          width: calc(100% + 2px);
+          height:calc(100% + 2px);
+          transform: scaleX(0);
+          transform-origin: left;
           background-color: var(--box-color);
           z-index: -1;
         }
