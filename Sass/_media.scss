@@ -61,4 +61,11 @@ nav {
     }
   }
 }
+.team {
+  @media (max-width:411px) {
+    .box{
+      margin-left: 65px;
+    }
+  }
+}
 /* End landing queries */
