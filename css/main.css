@@ -46,6 +46,7 @@ img {
   padding: 10px 20px;
   font-size: 1.9rem;
   position: relative;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   z-index: 10; }
   .special-header h3::before, .special-header h3::after {
@@ -245,6 +246,7 @@ nav {
         line-height: 1.5;
         color: #777; }
     .articles .content .box:hover .btn-more::before {
+      -webkit-animation-play-state: running;
       animation-play-state: running; }
     .articles .content .btn-more {
       border: none;
@@ -263,6 +265,7 @@ nav {
         transform: translatey(-50%);
         font-family: "font awesome 5 free";
         font-weight: 900;
+        -webkit-animation: for-back var(--main-transition) cubic-bezier(0.68, 0.13, 0.23, 0.93) infinite alternate paused;
         animation: for-back var(--main-transition) cubic-bezier(0.68, 0.13, 0.23, 0.93) infinite alternate paused; }
       .articles .content .btn-more a {
         color: var(--main-color); }
@@ -313,6 +316,8 @@ nav {
         text-align: center;
         padding: 0 15px; }
         .features .content .box .text h3 {
+          width: -webkit-max-content;
+          width: -moz-max-content;
           width: max-content;
           font-size: 35px;
           font-weight: bold;
@@ -337,6 +342,8 @@ nav {
         padding: 10px 30px;
         margin: 50px auto !important;
         display: block;
+        width: -webkit-max-content;
+        width: -moz-max-content;
         width: max-content;
         border-radius: 5px;
         font-size: 20px;
@@ -452,6 +459,7 @@ nav {
       border-radius: 10px;
       transition: var(--main-transition); }
     .team .box:hover img {
+      -webkit-filter: grayscale(100%);
       filter: grayscale(100%); }
   .team .social {
     position: absolute;
@@ -464,13 +472,13 @@ nav {
       color: var(--side-color);
       cursor: pointer; }
     .team .social .face-logo:hover {
-      color: #4267B2; }
+      color: #4267b2; }
     .team .social .twitter-logo:hover {
-      color: #1DA1F2; }
+      color: #1da1f2; }
     .team .social .linked-logo:hover {
-      color: #2867B2; }
+      color: #2867b2; }
     .team .social .tube-logo:hover {
-      color: #FF0000; }
+      color: #ff0000; }
   .team .title {
     padding: 20px; }
     .team .title h4 {
@@ -478,6 +486,122 @@ nav {
       font-weight: bold;
       color: var(--main-color);
       margin-bottom: 10px; }
+
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--bg-color); }
+  .services .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    counter-reset: counting 0; }
+  .services .box {
+    background-color: white;
+    text-align: center;
+    padding: 30px 0 80px;
+    transition: var(--main-transition);
+    position: relative;
+    box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.3); }
+    .services .box:hover {
+      box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: -2px 11px 35px -7px rgba(0, 0, 0, 0.4);
+      transform: translateY(-10px); }
+    .services .box::before {
+      content: '';
+      height: 3px !important;
+      background-color: var(--main-color);
+      transform-origin: center !important; }
+    .services .box:hover::before {
+      transform: scaleX(1); }
+  .services .title i {
+    color: #d5d5d5; }
+  .services .title p {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 15px;
+    color: var(--main-color); }
+  .services .details {
+    counter-increment: counting 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.05);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 15px; }
+    .services .details::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      content: counters(counting,".",decimal-leading-zero);
+      font-size: 25px;
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100px;
+      height: 100%;
+      background: var(--main-color); }
+    .services .details::after {
+      content: "";
+      position: absolute;
+      left: 95px;
+      bottom: 0;
+      width: 50px;
+      height: 100%;
+      background: #d5d5d5;
+      transform: skewX(-25deg) translateX(-10px); }
+    .services .details a {
+      color: var(--main-color);
+      text-transform: capitalize; }
+
+.skills {
+  padding: var(--section-padding) 0; }
+  .skills .content {
+    display: flex;
+    align-items: center; }
+    .skills .content .progress {
+      flex-grow: 1; }
+    .skills .content .skill {
+      margin: 20px 0; }
+      .skills .content .skill h3 {
+        font-size: 20px;
+        margin-bottom: 15px; }
+      .skills .content .skill p {
+        width: 100%;
+        background-color: rgba(204, 204, 204, 0.5);
+        height: 30px;
+        position: relative; }
+        .skills .content .skill p::after {
+          content: attr(data-progress);
+          position: absolute;
+          right: 0;
+          top: -40px;
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 13px;
+          background: white;
+          border: 1px solid #ececec;
+          color: var(--main-color); }
+      .skills .content .skill span {
+        display: block;
+        background-color: var(--main-color);
+        height: 100%; }
+      .skills .content .skill .html {
+        width: 80%; }
+      .skills .content .skill .python {
+        width: 80%; }
+      .skills .content .skill .css {
+        width: 85%; }
+      .skills .content .skill .js {
+        width: 70%; }
 
 /* media queries */
 /*Start container */
@@ -530,6 +654,10 @@ nav {
   .team .box {
     margin-left: 65px; } }
 
+@media (max-width: 992px) {
+  .skills .imag {
+    display: none; } }
+
 /* End landing queries */
 /* End media queries */
 /* Keyframes */
@@ -557,7 +685,7 @@ nav {
   to {
     transform: translate(-15px, -50%); } }
 /* End Keyframes */
-nav .links > li > a::before, nav .box li::before, .team .box::before {
+nav .links > li > a::before, nav .box li::before, .team .box::before, .services .box::before {
   transition-duration: var(--main-transition);
   position: absolute;
   left: 0;

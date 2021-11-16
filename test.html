@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="test.css">
 </head>
 <body>
-  <div></div>
+  <div>
+    .details{
+      counter-reset: count-num 00;
+      p{
+        counter-increment: count-num 1;
+        &::before{
+          content: counters(count-num, ".", decimal-leading-zero)
+        }
+      }
+  
+    }
+  </div>
 </body>
 </html>
