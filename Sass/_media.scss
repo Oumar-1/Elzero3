@@ -61,17 +61,69 @@ nav {
     }
   }
 }
-.team {
-  @media (max-width:411px) {
-    .box{
-      margin-left: 65px;
+.testimonials {
+  @media (max-width: 767px) {
+    .box {
+      padding: 60px 15px 15px;
+      img {
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+      .title{
+        text-align: center;
+      }
+      .text p {
+        margin: 20px 0;
+        line-height: 1.5;
+        color: var(--side-color);
+        text-align: center;
+      }
     }
   }
 }
-.skills{
-  @media (max-width:992px) {
-    .imag{
+.team {
+  @media (max-width: 600px) {
+    .box {
+      margin: auto;
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 0 10px 60px;
+      img {
+        margin: 0;
+      }
+    }
+    .social {
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+      transform: translateY(50%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+.skills {
+  @media (max-width: 992px) {
+    .imag {
       display: none;
+    }
+  }
+}
+.how-it-works{
+  @media (max-width:991px) {
+    .container{
+      flex-direction: column;
+    }
+    .content{
+      margin: 50px 0 0;
+    }
+    .box{
+      width: 100%;
     }
   }
 }

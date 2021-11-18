@@ -468,9 +468,11 @@ nav {
     transform: translate(50%, -50%); }
     .team .social i {
       display: block;
-      margin: 20px 0;
+      width: 50px;
+      margin: 30px 0;
       color: var(--side-color);
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
     .team .social .face-logo:hover {
       color: #4267b2; }
     .team .social .twitter-logo:hover {
@@ -479,13 +481,16 @@ nav {
       color: #2867b2; }
     .team .social .tube-logo:hover {
       color: #ff0000; }
+  .team .box:hover .title h4 {
+    color: #777; }
   .team .title {
     padding: 20px; }
     .team .title h4 {
       font-size: 20px;
       font-weight: bold;
       color: var(--main-color);
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      transition: var(--main-transition); }
 
 .services {
   padding-top: var(--section-padding);
@@ -495,6 +500,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
+    justify-content: center;
     counter-reset: counting 0; }
   .services .box {
     background-color: white;
@@ -518,12 +524,12 @@ nav {
     .services .box:hover::before {
       transform: scaleX(1); }
   .services .title i {
-    color: #d5d5d5; }
+    color: var(--main-color); }
   .services .title p {
     font-size: 25px;
     font-weight: 700;
     margin-top: 15px;
-    color: var(--main-color); }
+    color: black; }
   .services .details {
     counter-increment: counting 1;
     position: absolute;
@@ -594,14 +600,51 @@ nav {
         display: block;
         background-color: var(--main-color);
         height: 100%; }
-      .skills .content .skill .html {
-        width: 80%; }
-      .skills .content .skill .python {
-        width: 80%; }
-      .skills .content .skill .css {
-        width: 85%; }
-      .skills .content .skill .js {
-        width: 70%; }
+
+.how-it-works {
+  background: var(--bg-color);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding); }
+  .how-it-works .container {
+    display: flex;
+    align-items: center; }
+  .how-it-works .content {
+    margin-left: 50px; }
+  .how-it-works .box {
+    display: flex;
+    align-items: center;
+    background-color: #f6f5f5;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 20px;
+    width: 600px;
+    z-index: 1;
+    position: relative; }
+    .how-it-works .box::before {
+      content: '';
+      background: rgba(221, 221, 221, 0.4);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+      transform-origin: center;
+      z-index: -1;
+      transition-duration: var(--main-transition); }
+    .how-it-works .box:hover::before {
+      transform: scale(1); }
+    .how-it-works .box img {
+      width: 80px;
+      height: 80px;
+      margin-right: 40px; }
+  .how-it-works .text h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px; }
+  .how-it-works .text p {
+    color: var(--side-color);
+    line-height: 1.5; }
 
 /* media queries */
 /*Start container */
@@ -650,13 +693,51 @@ nav {
     .landing .imag {
       display: none; } }
 
-@media (max-width: 411px) {
+@media (max-width: 767px) {
+  .testimonials .box {
+    padding: 60px 15px 15px; }
+    .testimonials .box img {
+      right: 50%;
+      transform: translate(50%, -50%); }
+    .testimonials .box .title {
+      text-align: center; }
+    .testimonials .box .text p {
+      margin: 20px 0;
+      line-height: 1.5;
+      color: var(--side-color);
+      text-align: center; } }
+
+@media (max-width: 600px) {
   .team .box {
-    margin-left: 65px; } }
+    margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 10px 60px; }
+    .team .box img {
+      margin: 0; }
+  .team .social {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .team .social i {
+      margin: 0 10px; } }
 
 @media (max-width: 992px) {
   .skills .imag {
     display: none; } }
+
+@media (max-width: 991px) {
+  .how-it-works .container {
+    flex-direction: column; }
+  .how-it-works .content {
+    margin: 50px 0 0; }
+  .how-it-works .box {
+    width: 100%; } }
 
 /* End landing queries */
 /* End media queries */
