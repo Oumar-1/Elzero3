@@ -144,7 +144,12 @@ nav {
       &::after {
         width: 120px;
         height: 120px;
+      }
+      &::before{
         transform: translate(-50% , -50%);
+      }
+      &::after{
+        transform: translate(0% , 100%);
       }
     }
     .imag {
@@ -187,6 +192,35 @@ nav {
       margin: 0;
       border-radius: 5px;
     }
+  }
+}
+.pricing{
+  @media (max-width:1170px) {
+    .container .box:nth-child(2){
+      transform: translate(0);
+    }
+  }
+}
+.videos{
+  @media (max-width:992px) {
+    .container{
+      flex-direction: column;
+    }
+    .top-videos,
+    .video{
+    border: 1px solid #ccc;
+    }
+    .top-videos .title{
+      min-width: unset;
+    }
+  }
+}
+.requests{
+  @media (max-width:992px) {
+    .content{
+      flex-direction: column;
+    }
+    
   }
 }
 /* End landing queries */
