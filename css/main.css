@@ -1264,6 +1264,98 @@ nav .box li a i {
   background-color: var(--main-color-alt);
 }
 
+footer {
+  padding-top: var(--section-padding);
+  background-color: #191919;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  color: #b9b9b9;
+}
+footer .author h2 {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px;
+}
+footer .author a {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #313131;
+  color: inherit;
+  font-size: 20px;
+  margin-right: 5px;
+  transition: var(--main-transition);
+}
+footer .author a:first-of-type:hover {
+  background-color: #4267B2;
+}
+footer .author a:nth-of-type(2):hover {
+  background-color: #1DA1F2;
+}
+footer .author a:last-of-type:hover {
+  background-color: #ff0000;
+}
+footer .author p {
+  width: 100%;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+footer .important-links li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+footer .important-links li a {
+  display: flex;
+  align-items: center;
+  min-height: 45px;
+  transition: var(--main-transition);
+  color: inherit;
+}
+footer .important-links li a:hover {
+  color: white;
+  padding-left: 15px;
+}
+footer .important-links li i {
+  margin-right: 10px;
+  color: var(--main-color);
+}
+footer address p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+footer address p i {
+  margin-right: 15px;
+  font-size: 25px;
+  color: var(--main-color);
+}
+footer .photoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 80px));
+  gap: 5px;
+  align-content: flex-start;
+}
+footer .photoes img {
+  padding: 3px;
+  background-color: white;
+}
+footer .made {
+  border-top: 1px solid #444;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 20px;
+}
+footer .made span {
+  color: red;
+}
+
 /* media queries */
 /*Start container */
 @media (min-width: 768px) {
@@ -1478,6 +1570,12 @@ nav .box li a i {
 @media (max-width: 992px) {
   .requests .content {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
   }
 }
 

@@ -223,4 +223,9 @@ nav {
     
   }
 }
+footer{
+  @media (max-width:767px) {
+    text-align: center;
+  }
+}
 /* End landing queries */
