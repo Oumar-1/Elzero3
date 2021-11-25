@@ -26,9 +26,9 @@ body {
   padding: 0;
 }
 * input:not([type="submit"]):focus,
-* textarea,
-* button ,
-* a{
+* textarea:focus,
+* button:focus ,
+* a:focus{
   outline: 1px solid #b4b4b4;
 }
 ul {
