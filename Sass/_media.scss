@@ -10,6 +10,11 @@
     width: 1170px;
   }
 }
+.special-header{
+  @media (max-width:767px) {
+    h3{font-size: 1.52em}
+  }
+}
 /* End container */
 /* Start nav  */
 nav {

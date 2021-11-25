@@ -1018,17 +1018,17 @@ nav .box li a i {
 }
 .pricing .container .box .popular {
   position: absolute;
-  right: -35px;
-  top: 58px;
+  right: 35px;
+  top: 0;
   background: var(--main-color);
   color: var(--hov-color);
-  -webkit-clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
-  clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
-  padding: 10px 30px 10px 15px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+  padding: 10px 10px 30px;
   font-weight: bold;
   font-size: 20px;
-  transform: rotate(90deg);
-  border-radius: 5px 0 0 5px;
+  writing-mode: vertical-lr;
+  border-radius: 5px 5px 0 0;
 }
 .pricing .box > button a::before, .pricing .box > button a::after {
   content: "";
@@ -1371,6 +1371,12 @@ footer .made span {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .special-header h3 {
+    font-size: 1.52em;
   }
 }
 
