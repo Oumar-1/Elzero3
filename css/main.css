@@ -20,7 +20,7 @@ nav .links > li > a::before, nav .box li::before, .team .box::before, .services 
   --bg-color: #ececec;
   --section-padding: 80px;
   --main-border-r: 5px;
-  --hov-color:white;
+  --hov-color: white;
 }
 
 html {
@@ -36,6 +36,13 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+* input:not([type="submit"]):focus,
+* textarea,
+* button,
+* a {
+  outline: 1px solid #b4b4b4;
 }
 
 ul {
@@ -109,6 +116,8 @@ img {
 
 .main-header {
   margin: 0 auto 80px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   font-size: 40px;
 }
@@ -800,7 +809,7 @@ nav .box li a i {
 }
 
 .events {
-  overflow: hidden;
+  overflow-x: hidden;
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
@@ -812,7 +821,7 @@ nav .box li a i {
   position: relative;
 }
 .events .container::before, .events .container::after {
-  content: '';
+  content: "";
   width: 250px;
   height: 250px;
   background-image: url(../images/dots.png);
@@ -880,33 +889,23 @@ nav .box li a i {
   background: var(--bg-color);
   justify-self: center;
   padding: 30px;
-  border-radius: 50px;
+  border-radius: 60px;
 }
 .events .subscribe input[type="email"] {
   border: none;
   padding: 20px;
   border-radius: 40px;
   width: 400px;
-  outline: none;
   margin-right: 20px;
   caret-color: var(--main-color);
   transition-duration: 1s;
   color: black;
 }
-.events .subscribe input[type="email"]:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-.events .subscribe input[type="email"]:focus::-moz-placeholder {
-  color: transparent;
-}
-.events .subscribe input[type="email"]:focus:-ms-input-placeholder {
-  color: transparent;
-}
-.events .subscribe input[type="email"]:focus::-ms-input-placeholder {
-  color: transparent;
+.events .subscribe input[type="email"]::placeholder {
+  transition: var(--main-transition);
 }
 .events .subscribe input[type="email"]:focus::placeholder {
-  color: transparent;
+  opacity: 0;
 }
 .events .subscribe input[type="submit"] {
   border: none;
@@ -914,6 +913,7 @@ nav .box li a i {
   border-radius: 40px;
   background-color: var(--main-color);
   color: var(--hov-color);
+  cursor: pointer;
   font-weight: bold;
 }
 
@@ -924,7 +924,7 @@ nav .box li a i {
   position: relative;
 }
 .pricing::before, .pricing::after {
-  content: '';
+  content: "";
   background-image: url(../images/dots.png);
   background-repeat: no-repeat;
   position: absolute;
@@ -955,13 +955,13 @@ nav .box li a i {
   z-index: 1;
 }
 .pricing .container .box::before {
-  content: '';
+  content: "";
   height: 50%;
   background-color: rgba(204, 204, 204, 0.2);
   z-index: -1;
 }
 .pricing .container .box::after {
-  content: '';
+  content: "";
   transition-duration: var(--main-transition);
   position: absolute;
   left: 0;
@@ -1015,7 +1015,6 @@ nav .box li a i {
   border-radius: 0 5px;
   display: inline-block;
   position: relative;
-  outline-color: #1787e0;
 }
 .pricing .container .box .popular {
   position: absolute;
@@ -1032,7 +1031,7 @@ nav .box li a i {
   border-radius: 5px 0 0 5px;
 }
 .pricing .box > button a::before, .pricing .box > button a::after {
-  content: '';
+  content: "";
   background: var(--main-color);
   width: 50%;
   z-index: -1;
@@ -1117,7 +1116,7 @@ nav .box li a i {
   justify-content: space-between;
 }
 .videos .video video {
-  max-width: 100%;
+  width: 100%;
 }
 .videos .video .title {
   background-color: white;
@@ -1131,7 +1130,7 @@ nav .box li a i {
   position: relative;
 }
 .stats::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1143,7 +1142,7 @@ nav .box li a i {
 .stats .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px  20px;
+  gap: 30px 20px;
   justify-content: center;
 }
 .stats .box {
@@ -1153,7 +1152,7 @@ nav .box li a i {
   position: relative;
 }
 .stats .box::before, .stats .box::after {
-  content: '';
+  content: "";
   transition-duration: 1s;
   background: var(--main-color);
   position: absolute;
@@ -1189,10 +1188,8 @@ nav .box li a i {
 
 .requests .content {
   display: flex;
-  align-items: center;
 }
 .requests .content .discount {
-  width: 100%;
   flex-basis: 50%;
   background-color: rgba(23, 135, 224, 0.97);
   color: var(--hov-color);
@@ -1201,7 +1198,7 @@ nav .box li a i {
   position: relative;
 }
 .requests .content .discount::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1227,20 +1224,21 @@ nav .box li a i {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0;
 }
 .requests .content .request h4 {
   font-size: 35px;
   font-weight: bold;
   margin: 20px 0 30px;
 }
-.requests .content .request input, .requests .content .request textarea {
+.requests .content .request input,
+.requests .content .request textarea {
   width: 300px;
   padding: 20px;
   margin: 10px 0;
   border: none;
   border-bottom: 1px solid #ccc;
   background-color: #f9f9f9;
-  outline-color: #bbb8b8;
   resize: none;
 }
 .requests .content .request textarea {
@@ -1292,10 +1290,10 @@ footer .author a {
   transition: var(--main-transition);
 }
 footer .author a:first-of-type:hover {
-  background-color: #4267B2;
+  background-color: #4267b2;
 }
 footer .author a:nth-of-type(2):hover {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
 }
 footer .author a:last-of-type:hover {
   background-color: #ff0000;
@@ -1309,9 +1307,8 @@ footer .important-links li:not(:last-child) {
   border-bottom: 1px solid #444;
 }
 footer .important-links li a {
-  display: flex;
-  align-items: center;
-  min-height: 45px;
+  display: block;
+  padding: 15px 0;
   transition: var(--main-transition);
   color: inherit;
 }
@@ -1319,9 +1316,12 @@ footer .important-links li a:hover {
   color: white;
   padding-left: 15px;
 }
-footer .important-links li i {
-  margin-right: 10px;
+footer .important-links li a::before {
+  content: "\f101";
+  font-family: "font awesome 5 free";
+  font-weight: bold;
   color: var(--main-color);
+  margin-right: 10px;
 }
 footer address p {
   display: flex;
@@ -1572,7 +1572,17 @@ footer .made span {
     flex-direction: column;
   }
 }
+@media (max-width: 767px) {
+  .requests h4 {
+    font-size: 30px;
+  }
+}
 
+@media (max-width: 767px) {
+  .main-header {
+    font-size: 30px;
+  }
+}
 @media (max-width: 767px) {
   footer {
     text-align: center;

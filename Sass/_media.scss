@@ -222,6 +222,16 @@ nav {
     }
     
   }
+  @media (max-width:767px) {
+    h4{
+      font-size: 30px;
+    }
+  }
+}
+@media (max-width:767px) {
+  .main-header{
+    font-size: 30px;
+  }
 }
 footer{
   @media (max-width:767px) {
