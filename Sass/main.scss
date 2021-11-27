@@ -1,5 +1,5 @@
 /* Sass compiled files */
-@import "extend.scss";
+@import "extend";
 /* End Sass compiled files */
 /* START Global Rules*/
 @import "mix.scss";
@@ -27,8 +27,8 @@ body {
 }
 * input:not([type="submit"]):focus,
 * textarea:focus,
-* button:focus ,
-* a:focus{
+* button:focus,
+* a:focus {
   outline: 1px solid #b4b4b4;
 }
 ul {
@@ -143,11 +143,11 @@ nav {
       position: relative;
       z-index: 5;
       &::before {
+        @extend %fill-animat;
         content: "";
         background-color: hsla(0, 0%, 93%, 0.2);
         border-top: 4px solid var(--main-color);
         box-sizing: border-box;
-        @extend %fill-animat;
       }
       &:hover::before {
         transform: scaleX(1);
@@ -305,7 +305,7 @@ nav {
       }
       p {
         line-height: 1.5;
-        color: #777;
+        color: #444;
       }
     }
     .box:hover .btn-more::before {
@@ -1001,12 +1001,12 @@ nav {
     .popular {
       position: absolute;
       right: 35px;
-      top:0;
+      top: 0;
       background: var(--main-color);
       color: var(--hov-color);
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
-      padding:10px 10px 30px;
+      padding: 10px 10px 30px;
       font-weight: bold;
       font-size: 20px;
       writing-mode: vertical-lr;
@@ -1313,11 +1313,11 @@ footer {
           color: white;
           padding-left: 15px;
         }
-        &::before{
+        &::before {
           content: "\f101";
           font-family: "font awesome 5 free";
           font-weight: bold;
-        color: var(--main-color);
+          color: var(--main-color);
           margin-right: 10px;
         }
       }

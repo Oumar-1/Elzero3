@@ -322,7 +322,7 @@ nav .box li a i {
 }
 .articles .content .text p {
   line-height: 1.5;
-  color: #777;
+  color: #444;
 }
 .articles .content .box:hover .btn-more::before {
   -webkit-animation-play-state: running;
