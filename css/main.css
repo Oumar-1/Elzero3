@@ -1,5 +1,5 @@
 /* Sass compiled files */
-nav .links > li > a::before, nav .box li::before, .team .box::before, .services .box::before, .pricing .container .box::before, .pricing .box > button a::before, .pricing .box > button a::after {
+.pricing .box > button a::before, .pricing .box > button a::after, .pricing .container .box::before, .services .box::before, .team .box::before, nav .box li::before, nav .links > li > a::before {
   transition-duration: var(--main-transition);
   position: absolute;
   left: 0;
@@ -38,7 +38,7 @@ body {
   padding: 0;
 }
 
-* input:not([type="submit"]):focus,
+* input:not([type=submit]):focus,
 * textarea:focus,
 * button:focus,
 * a:focus {
@@ -158,6 +158,7 @@ nav .links > li > a {
   font-weight: 500;
   height: 70px;
   padding: 0 20px;
+  outline: none;
   position: relative;
   z-index: 5;
 }
@@ -173,7 +174,8 @@ nav .links > li > a:hover::before {
 nav .links > li > a:hover {
   color: var(--main-color);
 }
-nav .other-links:hover .links-container {
+nav .other-links:hover .links-container,
+nav .other-links .show-links {
   visibility: visible;
   transform: translateY(0);
   opacity: 1;
@@ -293,6 +295,29 @@ nav .box li a i {
 .articles {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+}
+.articles .to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #2196f3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 1s;
+  width: 40px;
+  height: 40px;
+  transform: scale(0);
+  font-size: 1.3em;
+}
+.articles .to-top:hover {
+  background-color: #222;
+  border: 1px solid #2196f3;
+}
+.articles .to-top-show {
+  transform: scale(1);
 }
 .articles .content {
   display: grid;
@@ -688,7 +713,7 @@ nav .box li a i {
   justify-content: center;
   align-items: center;
   color: var(--hov-color);
-  content: counters(counting,".",decimal-leading-zero);
+  content: counters(counting, ".", decimal-leading-zero);
   font-size: 25px;
   font-weight: 900;
   position: absolute;
@@ -858,6 +883,7 @@ nav .box li a i {
   font-size: 30px;
   font-weight: 700;
   padding: 15px 20px;
+  min-width: 75px;
 }
 .events .time span {
   display: block;
@@ -891,7 +917,7 @@ nav .box li a i {
   padding: 30px;
   border-radius: 60px;
 }
-.events .subscribe input[type="email"] {
+.events .subscribe input[type=email] {
   border: none;
   padding: 20px;
   border-radius: 40px;
@@ -901,13 +927,13 @@ nav .box li a i {
   transition-duration: 1s;
   color: black;
 }
-.events .subscribe input[type="email"]::placeholder {
+.events .subscribe input[type=email]::placeholder {
   transition: var(--main-transition);
 }
-.events .subscribe input[type="email"]:focus::placeholder {
+.events .subscribe input[type=email]:focus::placeholder {
   opacity: 0;
 }
-.events .subscribe input[type="submit"] {
+.events .subscribe input[type=submit] {
   border: none;
   padding: 20px;
   border-radius: 40px;
@@ -1247,7 +1273,7 @@ nav .box li a i {
   height: 200px;
   max-height: 200px;
 }
-.requests .content .request input[type="submit"] {
+.requests .content .request input[type=submit] {
   border: none;
   background-color: var(--main-color);
   padding: 15px 0;
@@ -1258,7 +1284,7 @@ nav .box li a i {
   cursor: pointer;
   outline: none;
 }
-.requests .content .request input[type="submit"]:hover {
+.requests .content .request input[type=submit]:hover {
   background-color: var(--main-color-alt);
 }
 
@@ -1523,7 +1549,7 @@ footer .made span {
   .events .subscribe {
     width: 100%;
   }
-  .events .subscribe input[type="email"] {
+  .events .subscribe input[type=email] {
     width: calc(100% - 140px);
   }
   .events .container::before, .events .container::after {
@@ -1535,12 +1561,12 @@ footer .made span {
     width: 100%;
     border-radius: 5px;
   }
-  .events .subscribe input[type="email"] {
+  .events .subscribe input[type=email] {
     width: 100%;
     margin-bottom: 40px;
     border-radius: 5px;
   }
-  .events .subscribe input[type="submit"] {
+  .events .subscribe input[type=submit] {
     border-radius: 5px;
   }
   .events .count {
@@ -1565,7 +1591,7 @@ footer .made span {
     flex-direction: column;
   }
   .videos .top-videos,
-  .videos .video {
+.videos .video {
     border: 1px solid #ccc;
   }
   .videos .top-videos .title {
@@ -1612,10 +1638,10 @@ footer .made span {
   25% {
     transform: translate(-50%, 0px);
   }
-  35%,55%,80% {
+  35%, 55%, 80% {
     transform: translate(-50%, 15px);
   }
-  45%,65%,90% {
+  45%, 65%, 90% {
     transform: translate(-50%, 0);
   }
 }
@@ -1623,10 +1649,10 @@ footer .made span {
   25% {
     transform: translate(-50%, 0px);
   }
-  35%,55%,80% {
+  35%, 55%, 80% {
     transform: translate(-50%, 15px);
   }
-  45%,65%,90% {
+  45%, 65%, 90% {
     transform: translate(-50%, 0);
   }
 }

@@ -3,11 +3,6 @@ const eventTimerMinute = document.getElementById("event-timer-minute");
 const eventTimerHour = document.getElementById("event-timer-hour");
 const eventTimerDay = document.getElementById("event-timer-day");
 
-console.log(eventTimerDay);
-console.log(eventTimerHour);
-console.log(eventTimerMinute);
-console.log(eventTimerSecond);
-
 function decresingNumber() {
   eventTimerSecond.innerHTML -= 1;
   if (eventTimerSecond.innerHTML == "0") {
@@ -31,3 +26,20 @@ function decresingNumber() {
   }
 }
 let eventTimer = setInterval(decresingNumber, 1000);
+
+const toTopButton = document.getElementById("to-top");
+toTopButton.onclick = () => window.scroll(0, 0);
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= "655") {
+    toTopButton.classList.add("to-top-show");
+  } else {
+    toTopButton.classList.remove("to-top-show");
+  }
+});
+
+const otherLinksAnchor = document.getElementById("other-links-anchor");
+const headerLinksContainer = document.querySelector(".links-container");
+otherLinksAnchor.onclick = function () {
+  headerLinksContainer.classList.toggle("show-links");
+};
