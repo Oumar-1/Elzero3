@@ -1,31 +1,27 @@
-const eventTimerSecond = document.getElementById("event-timer-second");
-const eventTimerMinute = document.getElementById("event-timer-minute");
-const eventTimerHour = document.getElementById("event-timer-hour");
-const eventTimerDay = document.getElementById("event-timer-day");
+let eventDate = new Date("May 01 2022 00:00").getTime();
 
-function decresingNumber() {
-  eventTimerSecond.innerHTML -= 1;
-  if (eventTimerSecond.innerHTML == "0") {
-    eventTimerMinute.innerHTML -= 1;
-    eventTimerSecond.innerHTML = 60;
+let eventCounter = setInterval(function () {
+  let deffDate = eventDate - Date.now();
+  if (deffDate <= 0) {
+    document.querySelector(".count").style = "--main-color:red;"
+    clearInterval(eventCounter);
+  } else {
+    let days = Math.floor(deffDate / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(
+      (deffDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    let minuts = Math.floor((deffDate % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((deffDate % (1000 * 60)) / 1000);
+    document.getElementById("event-timer-day").innerHTML =
+      days < 10 ? "0" + days : days;
+    document.getElementById("event-timer-hour").innerHTML =
+      hours < 10 ? "0" + hours : hours;
+    document.getElementById("event-timer-minute").innerHTML =
+      minuts < 10 ? "0" + minuts : minuts;
+    document.getElementById("event-timer-second").innerHTML =
+      seconds < 10 ? "0" + seconds : seconds;
   }
-  if (eventTimerMinute.innerHTML == "0") {
-    eventTimerHour.innerHTML -= 1;
-    eventTimerMinute.innerHTML = 60;
-  }
-  if (eventTimerHour.innerHTML == "0") {
-    eventTimerDay.innerHTML -= 1;
-    eventTimerHour.innerHTML = 24;
-  }
-  if (eventTimerDay.innerHTML == "-1") {
-    eventTimerSecond.innerHTML = "0";
-    eventTimerMinute.innerHTML = "0";
-    eventTimerHour.innerHTML = "0";
-    eventTimerDay.innerHTML = "0";
-    clearInterval(eventTimer);
-  }
-}
-let eventTimer = setInterval(decresingNumber, 1000);
+}, 1000);
 
 const toTopButton = document.getElementById("to-top");
 toTopButton.onclick = () => window.scroll(0, 0);

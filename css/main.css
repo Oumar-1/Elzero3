@@ -834,7 +834,7 @@ nav .box li a i {
 }
 
 .events {
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
