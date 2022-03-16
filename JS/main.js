@@ -3,7 +3,7 @@ let eventDate = new Date("May 01 2022 00:00").getTime();
 let eventCounter = setInterval(function () {
   let deffDate = eventDate - Date.now();
   if (deffDate <= 0) {
-    document.querySelector(".count").style = "--main-color:red;"
+    document.querySelector(".count").style = "--main-color:red;";
     clearInterval(eventCounter);
   } else {
     let days = Math.floor(deffDate / (1000 * 60 * 60 * 24));
@@ -39,3 +39,28 @@ const headerLinksContainer = document.querySelector(".links-container");
 otherLinksAnchor.onclick = function () {
   headerLinksContainer.classList.toggle("show-links");
 };
+
+// progress animation
+
+let ourSkillsProgress = document.getElementById("skills");
+let progressSpans = document.querySelectorAll(".progress span");
+let statsSection = document.getElementById("stats");
+let statsAchivments = document.querySelectorAll(".stats h6");
+let check = false;
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= ourSkillsProgress.offsetTop - 100) {
+    progressSpans.forEach((e) => {
+      e.style.width = e.parentElement.dataset.progress;
+    });
+  }
+  if (window.scrollY >= statsSection.offsetTop - 250) check = true;
+});
+statsAchivments.forEach((stat) => {
+  let goal = +stat.dataset.achive 
+  let statsInterval = setInterval(function () {
+    check ? stat.innerHTML++: "";
+    if (+stat.innerHTML >= goal) {
+      clearInterval(statsInterval);
+    }
+  }, 2000 / goal);
+})

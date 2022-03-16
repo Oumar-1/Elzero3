@@ -310,6 +310,7 @@ nav .box li a i {
   width: 40px;
   height: 40px;
   transform: scale(0);
+  z-index: 999;
   font-size: 1.3em;
 }
 .articles .to-top:hover {
@@ -777,6 +778,7 @@ nav .box li a i {
   display: block;
   background-color: var(--main-color);
   height: 100%;
+  transition-duration: 1.5s;
 }
 
 .how-it-works {
@@ -1203,6 +1205,7 @@ nav .box li a i {
   margin-bottom: 20px;
 }
 .stats .box h6 {
+  transition-duration: 0.5s;
   font-size: 50px;
 }
 .stats .box p {
